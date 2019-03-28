@@ -266,7 +266,7 @@ Jwt.prototype.isExpired = function() {
 };
 
 Jwt.prototype.isNotBefore = function() {
-  return new Date(this.body.nbf * 1000) >= new Date();
+  return new Date((this.body.nbf * 1000) - 2000) >= new Date();
 };
 
 function Parser(options){
